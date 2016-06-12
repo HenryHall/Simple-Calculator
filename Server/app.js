@@ -6,8 +6,8 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 var calculations = require('../modules/calculator.js');
 
 
-var server = app.listen(8000, 'localhost', function(){
-  console.log("The server is on.");
+var server = app.listen(process.env.PORT || 3000, function(){
+  console.log( 'server listening on port 3000' )
 });
 
 app.get("/", function(req, res){
