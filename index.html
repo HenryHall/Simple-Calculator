@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weekend Project 3</title>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <!-- <form class="" action="/calculate" method="post" onsubmit="return tester();">
+      <input type="text" name="firstNum" value="" placeholder="Enter a value">
+      <select class="" name="operator">
+        <option>+</option>
+        <option>-</option>
+        <option>×</option>
+        <option>÷</option>
+      </select>
+      <input type="text" name="secondNum" value="" placeholder="Enter a value">
+      <input type="submit" name="name" value="Submit">
+      <input type="reset">
+    </form> -->
+    <div id="calculator">
+      <h1>Simple Calculator</h1>
+
+      <form id = "calculatorForm">
+      <!-- action="/calculate" method="post" onsubmit="return returnedValue();" target="returnedValue"> -->
+        <input readonly name="screenInput" id="screen" type="text">
+
+        <div id='numbers'>
+          <button type="button" class="calcButton" value="1">1</button>
+          <button type="button" class="calcButton" value="2">2</button>
+          <button type="button" class="calcButton" value="3">3</button>
+          <button type="button" class="calcButton" value="4">4</button>
+          <button type="button" class="calcButton" value="5">5</button>
+          <button type="button" class="calcButton" value="6">6</button>
+          <button type="button" class="calcButton" value="7">7</button>
+          <button type="button" class="calcButton" value="8">8</button>
+          <button type="button" class="calcButton" value="9">9</button>
+          <button type="button" class="calcButton" value="0">0</button>
+          <button type="button" class="calcButton" value=".">.</button>
+        </div>
+
+        <div id='operators'>
+          <button type="button" class="operatorButton" value="+">+</button>
+          <button type="button" class="operatorButton" value="-">-</button>
+          <button type="button" class="operatorButton" value="×">×</button>
+          <button type="button" class="operatorButton" value="÷">÷</button>
+          <button id="submitButton" type="submit" value="Submit">=</button>
+        </div>
+
+        <button type="reset" id="clearButton">Clear</button>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>
