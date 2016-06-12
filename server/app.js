@@ -11,7 +11,7 @@ var server = app.listen(process.env.PORT || 3000, function(){
 });
 
 app.get("/", function(req, res){
-  res.sendFile (path.resolve ('./index.html'));
+  res.sendFile (path.resolve ('./views/index.html'));
 });
 
 app.post("/calculate", urlencodedParser,  function (req, res){
