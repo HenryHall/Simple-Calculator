@@ -15,42 +15,51 @@ var calculator = function(resObject){ //Get the object
 
   for (var i=0; i<newInput.length; i++) {
     console.log("String position: " + i + ". Seeing: " + newInput[i] + " Running Total: " + runningTotal);
-    if ( newInput[i] === "+" || newInput[i] === "-" || newInput[i] === "×" || newInput[i] === "÷") {
-      console.log("In operator check");
-      if (i==0) {return "ERROR"}
-      else if (runningTotal == null) {
-        operator = newInput[i];
-        runningTotal = Number(firstNum);
-        firstNum = "";
-        console.log("Operator: " + operator + " runningTotal: " + runningTotal);
-      } else {
-        console.log("Operator switch, operator: " + operator);
-        switch (operator) {
-          case "+":
-            runningTotal = evaluate['+'](runningTotal, firstNum);
-            operator = newInput[i];
-            firstNum = "";
-            break;
-          case "-":
-            runningTotal = evaluate['-'](runningTotal, firstNum);
-            operator = newInput[i];
-            firstNum = "";
-            break;
-          case "×":
-            runningTotal = evaluate['×'](runningTotal, firstNum);
-            operator = newInput[i];
-            firstNum = "";
-            break;
-          case "÷":
-            runningTotal = evaluate['÷'](runningTotal, firstNum);
-            operator = newInput[i];
-            firstNum = "";
-            break;
-          default:
-            return "wtf?";
-
-          }//End Switch
-      }//End Else
+    if (i == 0 && newInput[i] == '-') {
+      firstNum += newInput[i];
+      console.log("firstNum: " + firstNum);
+    } else if ( newInput[i] === "+" || newInput[i] === "-" || newInput[i] === "×" || newInput[i] === "÷") {
+        console.log("In operator check");
+        if (i==0) {return "ERROR"}
+        else if ( newInput[i-1] === "+" || newInput[i-1] === "-" || newInput[i-1] === "×" || newInput[i-1] === "÷") {
+          firstNum += newInput[i];
+          console.log("firstNum: " + firstNum);
+        } else if (runningTotal == null) {
+          operator = newInput[i];
+          runningTotal = Number(firstNum);
+          firstNum = "";
+          console.log("Operator: " + operator + " runningTotal: " + runningTotal);
+        } else {
+          console.log("Operator switch, operator: " + operator);
+          runningTotal = evaluate[operator](runningTotal, firstNum);
+          operator = newInput[i];
+          firstNum = "";
+          // switch (operator) {
+          //   case "+":
+          //     runningTotal = evaluate['+'](runningTotal, firstNum);
+          //     operator = newInput[i];
+          //     firstNum = "";
+          //     break;
+          //   case "-":
+          //     runningTotal = evaluate['-'](runningTotal, firstNum);
+          //     operator = newInput[i];
+          //     firstNum = "";
+          //     break;
+          //   case "×":
+          //     runningTotal = evaluate['×'](runningTotal, firstNum);
+          //     operator = newInput[i];
+          //     firstNum = "";
+          //     break;
+          //   case "÷":
+          //     runningTotal = evaluate['÷'](runningTotal, firstNum);
+          //     operator = newInput[i];
+          //     firstNum = "";
+          //     break;
+          //   default:
+          //     return "wtf?";
+          //
+          //   }//End Switch
+        }//End Else
 
     } else {
 
